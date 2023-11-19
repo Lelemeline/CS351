@@ -106,6 +106,7 @@ Pour le test, on considère que si on obtient le nombre de déplacements correct
 
 ## Exercice 5 : Quick sort
 
-- [ ] Makefile
-- [ ] fonctions
-- [ ] fichier test
+- [x] Makefile
+- [x] fonctions
+- [x] test
+Le test est un tableau dans le main

@@ -1,24 +1,36 @@
 #include <stdio.h>
 
-// partitionner(tableau T, entier premier, entier dernier, entier pivot)
-//     échanger T[pivot] et T[dernier]  // échange le pivot avec le dernier du tableau , le pivot devient le dernier du tableau
-//     j := premier
-//     pour i de premier à dernier - 1 // la boucle se termine quand i = (dernier élément du tableau).
-//         si T[i] <= T[dernier] alors
-//             échanger T[i] et T[j]
-//             j := j + 1
-//     échanger T[dernier] et T[j]
-//     renvoyer j
-
-// tri_rapide(tableau T, entier premier, entier dernier)
-//         si premier < dernier alors
-//             pivot := choix_pivot(T, premier, dernier)
-//             pivot := partitionner(T, premier, dernier, pivot)
-//             tri_rapide(T, premier, pivot-1)
-//             tri_rapide(T, pivot+1, dernier)
-
+void swap(int *a, int *b){
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+int partitionner(int *tab,int d,int f,int pivot){
+    swap(&tab[pivot],&tab[f]);
+    int j = d;
+    for(int i=d;i<f-1;i++){
+        if(tab[i]<=tab[f]){
+            swap(&tab[i],&tab[j]);
+            j+=1;
+        }
+    }
+    swap(&tab[f],&tab[j]);
+    return j;
+}
 
 void quicksort(int *tab,int d,int f){
-    int pivot = *(tab+f);
+    if (d<f){
+        int pivot = *(tab+d);
+        pivot = partitionner(tab,d,f,pivot);
+        quicksort(tab,d,pivot-1);
+        quicksort(tab,pivot+1,f);
+    }
+}
 
+int main(void){
+    int tableau[12] = {2,4,9,8,1,8,5,6,7,2,10,3};
+    quicksort(tableau,0,11);
+    for (int i=0; i<12 ;i++){
+        printf("%i\n",tableau[i]);
+    }
 }

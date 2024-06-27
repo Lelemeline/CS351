@@ -4,6 +4,7 @@ trois raisons :
   1. M'entraîner à utiliser git
   2. Sauvegarder mes TPs
   3. En vrai git c'est classe
+
 Ce dépôt a pour volonté de contenir tous les TPs du 1er Semestre de 3A.
 ### Situation de chacun des TPs
 #### TP1

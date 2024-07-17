@@ -4,7 +4,7 @@
 
 - [x] Makefile modifié
 Le makefile de l'exercice 5 ressemble alors  à  :
-```
+```Makefile
 calcul : postfixe.o pile.o
 	gcc -g -o $@ $^ -Wall
 	make clean
@@ -38,7 +38,8 @@ $ gdb ./programme
 ## Exercice 2 : Pointeurs et ddd
 
 Débogage fait. Le début ressemble  à  :
-```Starting program: ~/TP6/mainPointeur
+```Bash
+Starting program: ~/TP6/mainPointeur
 
 Breakpoint 1, main (argc=21845, argv=0x7fffffffdf56) at mainPointeur.c:4
 4	int main(int argc, char * argv[]) {
